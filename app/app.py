@@ -30,4 +30,5 @@ if __name__ == '__main__':
             time.sleep(2)
         else:
             db_flag = True
+    fetch_data_and_send_to_db()
     app.run(debug=True, host='0.0.0.0')
