@@ -33,4 +33,9 @@ Check / note the ID for postgres container
 
 `psql -d nass_crop_conditions_kansas`
 
-`\dt` To view the database tables. Write queryes here
+`\dt` To view the database tables. Write queries here
+
+## TODO
+
+- Writing test cases
+- Expand functionality to create database tables for each comodity
