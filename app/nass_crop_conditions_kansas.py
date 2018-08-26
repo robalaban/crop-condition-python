@@ -1,5 +1,7 @@
 import os
 import requests
+from __main__ import db
+from models import crop_conditions_kansas
 
 # Building the query dict
 QUERYDICT = {
@@ -38,3 +40,13 @@ def fetch_data_and_send_to_db():
                 del db_rows[idx]['CV (%)']
             except KeyError:
                 pass
+
+def send_to_db(db_rows):
+    """This function abstracts/mocks the database connection
+
+    :param list[dict] db_rows: The data for the db
+    :return: None
+    """
+
+    db.session.bulk_insert_mappings(crop_conditions_kansas, db_rows)   
+    db.session.commit()
